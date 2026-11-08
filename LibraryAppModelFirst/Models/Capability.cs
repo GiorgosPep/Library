@@ -6,5 +6,5 @@ public class Capability
     public string Name { get; set; } = null!;
     public string Description { get; set; } = null!;
 
-    public ICollection<Role> Roles { get; set; } = new List<Role>();
+    public virtual ICollection<Role> Roles { get; set; } = new List<Role>();
 }
