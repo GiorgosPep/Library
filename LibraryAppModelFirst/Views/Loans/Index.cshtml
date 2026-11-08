@@ -1,0 +1,29 @@
+﻿@model IEnumerable<LibraryAppModelFirst.ViewModels.LoanViewModel>
+
+@{
+    ViewData["Title"] = "Δάνεια";
+}
+
+<h1>Δάνεια</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Βιβλίο</th>
+            <th>Δανειζόμενος</th>
+            <th>Ημερομηνία δανεισμού</th>
+            <th>Ημερομηνία επιστροφής</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var loan in Model)
+        {
+            <tr>
+                <td>@loan.BookTitle</td>
+                <td>@loan.BorrowerName</td>
+                <td>@loan.LoanDate.ToString("dd/MM/yyyy")</td>
+                <td>@(loan.ReturnDate?.ToString("dd/MM/yyyy") ?? "Δεν έχει επιστραφεί")</td>
+            </tr>
+        }
+    </tbody>
+</table>

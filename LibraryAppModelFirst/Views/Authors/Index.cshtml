@@ -1,0 +1,25 @@
+﻿@model IEnumerable<LibraryAppModelFirst.ViewModels.AuthorViewModel>
+
+@{
+    ViewData["Title"] = "Συγγραφείς";
+}
+
+<h1>Συγγραφείς</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Όνομα</th>
+            <th>Χώρα</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>@author.Name</td>
+                <td>@author.Country</td>
+            </tr>
+        }
+    </tbody>
+</table>
